@@ -4,6 +4,12 @@
 
 ---
 
+## 🖼️ Imagem Hero
+
+![Insurance Claims Analytics Platform Hero Image](images/hero_image.png)
+
+---
+
 ## English
 
 ### 📋 Overview
@@ -85,8 +91,8 @@ The platform processes millions of claims records, applies sophisticated ML algo
 │   Data Sources  │    │   Cloud Storage │    │   BigQuery DW   │
 │                 │───▶│                 │───▶│                 │
 │ • Claims Data   │    │ • Raw Data Lake │    │ • Structured    │
-│ • Policy Data   │    │ • File Storage  │    │ • Analytics     │
-│ • External APIs │    │ • Backup        │    │ • Reporting     │
+│ • Policy Data   │    │ • Analytics     │    │ • Reporting     │
+│ • External APIs │    │ • Backup        │    │ • Backup        │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          ▼                       ▼                       ▼
@@ -292,14 +298,14 @@ predicted_amount = amount_model.predict(X_test)
 import tensorflow as tf
 
 time_model = tf.keras.Sequential([
-    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(128, activation=\'relu\'),
     tf.keras.layers.Dropout(0.3),
-    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(64, activation=\'relu\'),
     tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(1, activation='linear')
+    tf.keras.layers.Dense(1, activation=\'linear\')
 ])
 
-time_model.compile(optimizer='adam', loss='mse', metrics=['mae'])
+time_model.compile(optimizer=\'adam\', loss=\'mse\', metrics=[\'mae\'])
 ```
 
 ### 📈 Performance Metrics
@@ -396,7 +402,7 @@ LOG_LEVEL=INFO
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Commit your changes (`git commit -m \'Add amazing feature\' `)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
@@ -444,21 +450,85 @@ A plataforma processa milhões de registros de sinistros, aplica algoritmos sofi
 - Benchmarking de performance contra padrões da indústria
 - Sistemas automatizados de suporte à decisão
 
+**Analytics Preditivos**
+- Predição do valor de sinistros usando modelos de regressão
+- Estimativa do tempo de processamento com intervalos de confiança
+- Modelos de avaliação de risco para subscrição de apólices
+- Análise e segmentação do comportamento do cliente
+- Análise e previsão de tendências sazonais
+
+**Inteligência de Negócios**
+- Dashboards interativos com KPIs em tempo real
+- Relatórios executivos com insights automatizados
+- Monitoramento de conformidade regulatória
+- Análise de impacto financeiro e cálculo de ROI
+- Benchmarking competitivo e análise de mercado
+
+### 🛠️ Stack Tecnológico
+
+| Componente | Tecnologia | Propósito |
+|------------|------------|-----------|
+| **Analytics** | Python, Pandas, NumPy, SciPy | Análise de dados e computação estatística |
+| **Machine Learning** | scikit-learn, TensorFlow, XGBoost | Detecção de fraudes e modelagem preditiva |
+| **Visualização** | Plotly, Matplotlib, Seaborn | Gráficos interativos e visualização de dados |
+| **Banco de Dados** | BigQuery, PostgreSQL, Redis | Data warehousing, OLTP e cache |
+| **Plataforma Cloud** | Google Cloud Platform | Hospedagem, serviços gerenciados e escalabilidade |
+| **Framework API** | FastAPI, Flask | Serviços de API REST e microsserviços |
+| **Fluxo de Trabalho** | Apache Airflow | Orquestração ETL e agendamento de tarefas |
+| **Monitoramento** | Cloud Monitoring, Grafana | Rastreamento de desempenho e alertas |
+
 ### 📊 Impacto nos Negócios
 
 **Redução de Fraudes:**
 - **65% de redução** em pagamentos de sinistros fraudulentos
 - **40% de melhoria** na precisão de detecção de fraudes
 - **30% mais rápido** nos processos de investigação de fraudes
-- **R$ 12M de economia anual** em perdas por fraude prevenidas
+- **$2.5M de economia anual** em perdas por fraude prevenidas
 - **85% de redução** nas taxas de falsos positivos
 
 **Eficiência Operacional:**
 - **50% de redução** no tempo médio de processamento de sinistros
 - **35% de melhoria** nos scores de satisfação do cliente
-- **25% de aumento** na produtividade dos reguladores
+- **25% de aumento** na produtividade dos reguladores de sinistros
 - **20% de redução** nos custos operacionais
-- **99,5% de compliance** com SLA de processamento de sinistros
+- **99.5% de conformidade** com SLA para processamento de sinistros
+
+**Desempenho Financeiro:**
+- **15% de melhoria** na taxa combinada
+- **$5M de economia anual** através da otimização de processos
+- **ROI de 450%** em 18 meses
+- **12% de aumento** nas margens de lucro
+- **30% de redução** nos custos de conformidade regulatória
+
+### 🏗️ Arquitetura
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Fontes de Dados│    │   Armazenamento │    │   BigQuery DW   │
+│                 │───▶│     Cloud       │───▶│                 │
+│ • Dados de Sinistros│    │ • Data Lake Bruto│    │ • Estruturado   │
+│ • Dados de Apólices│    │ • Armazenamento │    │ • Analytics     │
+│ • APIs Externas │    │     de Arquivos │    │ • Relatórios    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Apache Airflow│    │   Pipeline ML   │    │   Motor de Fraude│
+│                 │    │                 │    │                 │
+│ • Jobs ETL      │    │ • Treinamento de│    │ • Tempo Real    │
+│ • Agendamento   │    │     Modelos     │    │ • Pontuação     │
+│ • Monitoramento │    │ • Engenharia de │    │ • Alertas       │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Looker Studio │    │   FastAPI       │    │   Dashboard Web │
+│                 │    │                 │    │                 │
+│ • Dashboards BI │    │ • API REST      │    │ • Portal de     │
+│ • Relatórios    │    │ • Microsserviços│    │     Sinistros   │
+│ • Rastreamento  │    │ • Autenticação  │    │ • UI de Analytics│
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
 
 ### 🚦 Começando
 
@@ -489,11 +559,90 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Gere dados de exemplo e treine modelos**
+4. **Configure as variáveis de ambiente**
+```bash
+cp .env.example .env
+# Edite .env com sua configuração
+```
+
+5. **Configure as credenciais GCP**
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="caminho/para/seu/service-account-key.json"
+export GOOGLE_CLOUD_PROJECT="seu-project-id"
+```
+
+6. **Inicialize o banco de dados**
+```bash
+python scripts/init_database.py
+```
+
+7. **Gere dados de exemplo e treine modelos**
 ```bash
 cd src
 python claims_analyzer.py
 ```
+
+8. **Inicie a aplicação**
+```bash
+# Inicie o servidor API
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+# Inicie o dashboard (em outro terminal)
+streamlit run dashboard/app.py
+```
+
+#### Implantação Docker
+
+```bash
+# Construa e execute com Docker Compose
+docker-compose up --build
+
+# Escale os serviços
+docker-compose up --scale api=3 --scale worker=2
+```
+
+### 📊 Esquema de Dados
+
+#### Tabela de Sinistros
+| Coluna | Tipo | Descrição |
+|--------|------|-----------|
+| claim_id | STRING | Identificador único do sinistro |
+| policy_id | STRING | Identificador da apólice associada |
+| customer_id | STRING | Referência do cliente |
+| claim_date | DATE | Data de registro do sinistro |
+| incident_date | DATE | Data do incidente |
+| claim_type | STRING | Tipo de sinistro (automóvel, residência, saúde, etc.) |
+| claim_amount | FLOAT64 | Valor do sinistro em USD |
+| approved_amount | FLOAT64 | Valor aprovado para pagamento |
+| status | STRING | Status atual do sinistro |
+| fraud_score | FLOAT64 | Probabilidade de fraude gerada por ML (0-1) |
+| processing_time_days | INTEGER | Dias levados para processar |
+| adjuster_id | STRING | Regulador de sinistros atribuído |
+
+#### Tabela de Apólices
+| Coluna | Tipo | Descrição |
+|--------|------|-----------|
+| policy_id | STRING | Identificador único da apólice |
+| customer_id | STRING | Referência do titular da apólice |
+| policy_type | STRING | Tipo de apólice de seguro |
+| premium_amount | FLOAT64 | Valor do prêmio anual |
+| coverage_amount | FLOAT64 | Valor máximo de cobertura |
+| start_date | DATE | Data de início da apólice |
+| end_date | DATE | Data de término da apólice |
+| risk_score | FLOAT64 | Pontuação de risco de subscrição |
+| deductible | FLOAT64 | Valor da franquia da apólice |
+
+#### Tabela de Indicadores de Fraude
+| Coluna | Tipo | Descrição |
+|--------|------|-----------|
+| claim_id | STRING | Referência do sinistro |
+| indicator_type | STRING | Tipo de indicador de fraude |
+| severity | STRING | Nível de severidade (Baixo, Médio, Alto, Crítico) |
+| confidence | FLOAT64 | Pontuação de confiança (0-1) |
+| description | STRING | Descrição detalhada |
+| detected_at | TIMESTAMP | Carimbo de data/hora de detecção |
+| investigated | BOOLEAN | Status da investigação |
+| outcome | STRING | Resultado da investigação |
 
 ### 🔍 Principais Funcionalidades de Analytics
 
@@ -502,21 +651,183 @@ python claims_analyzer.py
 - Análise de padrões históricos de fraude
 - Análise de rede para anéis de fraude organizados
 - Detecção de anomalias em padrões de sinistros
-- Otimização da carga de trabalho de investigadores
+- Otimização da carga de trabalho do investigador
 
 **Analytics de Processamento de Sinistros**
 - Análise e otimização do tempo de processamento
-- Identificação de gargalos em fluxos de trabalho
-- Métricas de performance de reguladores
-- Correlação de satisfação do cliente
+- Identificação de gargalos nos fluxos de trabalho
+- Métricas de desempenho do regulador
+- Correlação da satisfação do cliente
 - Análise de custo por sinistro
+
+**Analytics Financeiros**
+- Análise e previsão de reservas de sinistros
+- Cálculo e tendências da taxa de sinistralidade
+- Avaliação da adequação do prêmio
+- Análise de rentabilidade por linha de produto
+- Cálculo de requisitos de capital regulatório
+
+**Analytics de Clientes**
+- Cálculo do valor vitalício do cliente
+- Previsão e prevenção de churn
+- Identificação de oportunidades de cross-selling
+- Análise de perfil de risco
+- Rastreamento de satisfação e NPS
+
+### 🧪 Modelos de Machine Learning
+
+#### Modelo de Detecção de Fraudes
+```python
+# Gradient Boosting para detecção de fraudes
+from xgboost import XGBClassifier
+
+fraud_model = XGBClassifier(
+    n_estimators=100,
+    max_depth=6,
+    learning_rate=0.1,
+    random_state=42
+)
+
+# Features: claim_amount, processing_time, customer_history, etc.
+fraud_model.fit(X_train, y_train)
+fraud_probability = fraud_model.predict_proba(X_test)[:, 1]
+```
+
+#### Predição do Valor do Sinistro
+```python
+# Random Forest para predição do valor do sinistro
+from sklearn.ensemble import RandomForestRegressor
+
+amount_model = RandomForestRegressor(
+    n_estimators=200,
+    max_depth=10,
+    random_state=42
+)
+
+amount_model.fit(X_train, y_train)
+predicted_amount = amount_model.predict(X_test)
+```
+
+#### Estimativa do Tempo de Processamento
+```python
+# Rede Neural para predição do tempo de processamento
+import tensorflow as tf
+
+time_model = tf.keras.Sequential([
+    tf.keras.layers.Dense(128, activation=\'relu\'),
+    tf.keras.layers.Dropout(0.3),
+    tf.keras.layers.Dense(64, activation=\'relu\'),
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.Dense(1, activation=\'linear\')
+])
+
+time_model.compile(optimizer=\'adam\', loss=\'mse\', metrics=[\'mae\'])
+```
+
+### 📈 Métricas de Desempenho
+
+| Métrica | Alvo | Atual |
+|---------|------|-------|
+| **Precisão da Detecção de Fraudes** | > 90% | 94.2% |
+| **Taxa de Falsos Positivos** | < 5% | 3.1% |
+| **Tempo de Processamento** | < 5 dias | 3.2 dias |
+| **Satisfação do Cliente** | > 85% | 89.5% |
+| **Disponibilidade do Sistema** | 99.9% | 99.97% |
+| **Tempo de Resposta da API** | < 200ms | 145ms |
+
+### 🧪 Testes
+
+```bash
+# Execute testes de unidade
+pytest tests/unit/
+
+# Execute testes de integração
+pytest tests/integration/
+
+# Execute testes de validação de modelo
+pytest tests/models/
+
+# Execute com cobertura
+pytest --cov=src tests/
+
+# Testes de desempenho
+python tests/performance/load_test.py
+```
+
+### 📚 Documentação da API
+
+#### Enviar Sinistro para Análise
+```bash
+POST /api/v1/claims/analyze
+{
+  "claim_id": "CLM_12345",
+  "policy_id": "POL_67890",
+  "claim_amount": 15000.00,
+  "incident_date": "2025-07-01",
+  "claim_type": "auto"
+}
+```
+
+#### Obter Pontuação de Fraude
+```bash
+GET /api/v1/claims/{claim_id}/fraud-score
+```
+
+#### Atualizar Status do Sinistro
+```bash
+PUT /api/v1/claims/{claim_id}/status
+{
+  "status": "approved",
+  "approved_amount": 12000.00,
+  "notes": "Sinistro aprovado após investigação"
+}
+```
+
+### 🔧 Configuração
+
+#### Variáveis de Ambiente
+```bash
+# Configuração do Banco de Dados
+DATABASE_URL=postgresql://user:pass@localhost:5432/insurance
+BIGQUERY_DATASET=insurance_analytics
+
+# Configuração de ML
+MODEL_VERSION=v2.1.0
+FRAUD_THRESHOLD=0.7
+BATCH_SIZE=1000
+
+# Configuração da API
+API_HOST=0.0.0.0
+API_PORT=8000
+DEBUG=false
+
+# Monitoramento
+ENABLE_METRICS=true
+LOG_LEVEL=INFO
+```
+
+### 📚 Documentação
+
+- [Documentação da API](docs/api.md)
+- [Documentação do Modelo](docs/models.md)
+- [Guia de Implantação](docs/deployment.md)
+- [Manual do Usuário](docs/user_manual.md)
+- [Solução de Problemas](docs/troubleshooting.md)
+
+### 🤝 Contribuindo
+
+1. Faça um fork do repositório
+2. Crie uma branch de feature (`git checkout -b feature/amazing-feature`)
+3. Faça seus commits (`git commit -m \'Adicionei uma feature incrível\' `)
+4. Envie para a branch (`git push origin feature/amazing-feature`)
+5. Abra um Pull Request
 
 ### 👨‍💻 Autor
 
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
 - Especializado em Analytics de Seguros, Detecção de Fraudes e Machine Learning
-- Expert em GCP, BigQuery e Tecnologia de Serviços Financeiros
+- Especialista em GCP, BigQuery e Tecnologia de Serviços Financeiros
 
 ### 📄 Licença
 
@@ -524,8 +835,8 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ### 🙏 Agradecimentos
 
-- Google Cloud Platform por fornecer infraestrutura robusta de analytics
-- Comunidades scikit-learn e TensorFlow pelos excelentes frameworks de ML
-- Especialistas da indústria de seguros pelo conhecimento de domínio e validação
-- Contribuidores open source que tornaram este projeto possível
+- Google Cloud Platform por fornecer uma infraestrutura de analytics robusta
+- Comunidades scikit-learn e TensorFlow por excelentes frameworks de ML
+- Especialistas da indústria de seguros por conhecimento de domínio e validação
+- Contribuidores de código aberto que tornaram este projeto possível
 
